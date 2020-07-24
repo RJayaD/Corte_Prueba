@@ -18,7 +18,6 @@ import java.util.List;
 
 public class AdapterRecycler extends RecyclerView.Adapter<AdapterRecycler.ViewHolder>{
 
-
     public class ViewHolder extends RecyclerView.ViewHolder{
         private TextView txtPais;
         ImageView Img;
@@ -46,7 +45,7 @@ public class AdapterRecycler extends RecyclerView.Adapter<AdapterRecycler.ViewHo
     public void onBindViewHolder( ViewHolder holder, int position) {
         holder.txtPais.setText(Data.get(position).getName());
         Glide.with(holder.Img.getContext())
-                .load("http://www.geognos.com/api/en/countries/flag/"+Data.get(position).getAlpha2Code()+".png")
+                .load(Data.get(position).getAlpha2Code())
                 .into(holder.Img);
     }
 

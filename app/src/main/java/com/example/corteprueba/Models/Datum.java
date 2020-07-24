@@ -16,7 +16,6 @@ public class Datum {
     }
     public String getAlpha2Code() {
         String data= " http://www.geognos.com/api/en/countries/flag/"+alpha2Code+".png";
-        this.alpha2Code=data;
         return alpha2Code;
     }
     public void setAlpha2Code(String alpha2Code) {

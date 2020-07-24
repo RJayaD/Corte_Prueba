@@ -2,6 +2,7 @@ package com.example.corteprueba.Adaptadores;
 import com.example.corteprueba.*;
 import com.example.corteprueba.Models.*;
 
+import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import java.util.List;
 
 public class AdapterRecycler extends RecyclerView.Adapter<AdapterRecycler.ViewHolder>{
 
+
     public class ViewHolder extends RecyclerView.ViewHolder{
         private TextView txtPais;
         ImageView Img;
@@ -28,7 +30,6 @@ public class AdapterRecycler extends RecyclerView.Adapter<AdapterRecycler.ViewHo
         }
     }
     public List<Datum> Data;
-
     public AdapterRecycler(List<Datum> data) {
         Log.i("TAG", "Error" + data.size());
         Data = data;
@@ -45,7 +46,7 @@ public class AdapterRecycler extends RecyclerView.Adapter<AdapterRecycler.ViewHo
     public void onBindViewHolder( ViewHolder holder, int position) {
         holder.txtPais.setText(Data.get(position).getName());
         Glide.with(holder.Img.getContext())
-                .load(Data.get(position).getAlpha2Code())
+                .load("http://www.geognos.com/api/en/countries/flag/"+Data.get(position).getAlpha2Code()+".png")
                 .into(holder.Img);
     }
 

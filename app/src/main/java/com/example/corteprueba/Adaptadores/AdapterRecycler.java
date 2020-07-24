@@ -44,7 +44,6 @@ public class AdapterRecycler extends RecyclerView.Adapter<AdapterRecycler.ViewHo
     @Override
     public void onBindViewHolder( ViewHolder holder, int position) {
         holder.txtPais.setText(Data.get(position).getName());
-
         Glide.with(holder.Img.getContext())
                 .load(Data.get(position).getAlpha2Code())
                 .into(holder.Img);
